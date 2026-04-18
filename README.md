@@ -5,14 +5,14 @@
 </p>
 
 <p align="center">
-  <img src="docs/assets/teaser.png" alt="SenseNova-U1" width="720">
-</p>
-
-<p align="center">
   <a href="#"><img src="https://img.shields.io/badge/arXiv-TBD-b31b1b.svg" alt="arXiv"></a>
   <a href="#"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Model-yellow" alt="HuggingFace Model"></a>
   <a href="https://unify.light-ai.top/"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20SenseNova_U1-Demo-Green" alt="SenseNova-U1 Demo"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
+</p>
+
+<p align="center">
+  <img src="docs/assets/teaser.png" alt="SenseNova-U1" width="720">
 </p>
 
 ## Overview
@@ -50,9 +50,26 @@ Last but not least, preliminary evidence displays that our models extend beyond 
 
 ### Use with SenseNova-Skills (zero-config, recommended)
 
-The easiest way to try SenseNova-U1 is through our companion repository **[SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills)**, which ships SenseNova-U1 as a ready-to-use skill. No extra environment setup, dependency pinning, or model-loading boilerplate is required — install the skills package and call into SenseNova-U1 directly.
+The easiest way to try SenseNova-U1 is through our companion repository **[SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills)**, which ships SenseNova-U1 as a ready-to-use skill.
 
 Refer to the [SenseNova-Skills README](https://github.com/OpenSenseNova/SenseNova-Skills) for installation and usage details.
+
+
+### Run with LightLLM + LightX2V
+
+To efficiently serve a unified model that jointly handles understanding and generation, we co-design a dedicated inference stack on top of **[LightLLM](https://github.com/ModelTC/lightllm)** and **[LightX2V](https://github.com/ModelTC/lightx2v)**, featuring:
+
+- **Disaggregated serving & transfer design** — understanding and generation workloads are served on separate engines with a low-overhead KV / feature transfer channel.
+- **Understanding-side optimizations** — tailored kernels, scheduling, and KV management for the VLM path.
+- **Generation-side optimizations** — step / sampler / cache optimizations for the X2I generation path.
+
+We observe competitive end-to-end latency and throughput across understanding, generation, and interleaved workloads.
+
+> 📖 **Full design, benchmarking protocol, and performance numbers:** see [`docs/inference_infrastructure.md`](./docs/inference_infrastructure.md).
+
+
+TBA: run with lightx2v
+
 
 ### Run with transformers + diffusers
 
@@ -95,20 +112,6 @@ TBA
 TBA
 ```
 
-### Run with LightLLM + LightX2V
-
-To efficiently serve a unified model that jointly handles understanding and generation, we co-design a dedicated inference stack on top of **[LightLLM](https://github.com/ModelTC/lightllm)** and **[LightX2V](https://github.com/ModelTC/lightx2v)**, featuring:
-
-- **Disaggregated serving & transfer design** — understanding and generation workloads are served on separate engines with a low-overhead KV / feature transfer channel.
-- **Understanding-side optimizations** — tailored kernels, scheduling, and KV management for the VLM path.
-- **Generation-side optimizations** — step / sampler / cache optimizations for the X2I generation path.
-
-We observe competitive end-to-end latency and throughput across understanding, generation, and interleaved workloads.
-
-> 📖 **Full design, benchmarking protocol, and performance numbers:** see [`docs/inference_infrastructure.md`](./docs/inference_infrastructure.md).
-
-
-TBA: run with lightx2v
 
 ## Evaluation
 
