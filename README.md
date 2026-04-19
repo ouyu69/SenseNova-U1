@@ -108,7 +108,7 @@ TBA
 
 ##### Text-to-Image
 
-[`examples/t2i_inference.py`](./examples/t2i_inference.py) is minimal text-to-image inference script for SenseNova-U1.
+[`examples/t2i/inference.py`](./examples/t2i/inference.py) is a minimal text-to-image inference script for SenseNova-U1.
 
 By default the model renders at **2048 × 2048** (1:1). You can override with `--width` / `--height`. SenseNova-U1 is trained on a set of resolution buckets (~2K total pixels) covering the following aspect ratios:
 
@@ -124,7 +124,7 @@ By default the model renders at **2048 × 2048** (1:1). You can override with `-
 The script accepts arbitrary `--width` / `--height` and only emits a warning when they fall outside this table; quality may degrade for untrained shapes.
 
 ```bash
-python examples/t2i_inference.py \
+python examples/t2i/inference.py \
   --model_path OpenSenseNova/SenseNova-U1-Mini \
   --prompt "一个咖啡店门口有一个黑板，上面写着日日新咖啡，2元一杯，旁边有个霓虹灯，写着商汤科技，旁边有个海报，海报上面是一只小浣熊，海报下方写着SenseNova newbee。" \
   --width 2048 --height 2048 \
@@ -132,12 +132,12 @@ python examples/t2i_inference.py \
   --profile
 ```
 
-For batched inference, pass a JSONL file via `--jsonl` (see [`examples/prompts.jsonl`](./examples/prompts.jsonl)). Each line is `{"prompt": ...}` and optionally `{"width": W, "height": H}`:
+For batched inference, pass a JSONL file via `--jsonl` (see [`examples/t2i/data/samples.jsonl`](./examples/t2i/data/samples.jsonl)). Each line is `{"prompt": ...}` and optionally `{"width": W, "height": H}`:
 
 ```bash
-python examples/t2i_inference.py \
+python examples/t2i/inference.py \
     --model_path OpenSenseNova/SenseNova-U1-Mini \
-    --jsonl prompts.jsonl \
+    --jsonl examples/t2i/data/samples.jsonl \
     --output_dir outputs/ \
     --profile
 ```
