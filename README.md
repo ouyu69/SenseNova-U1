@@ -71,7 +71,7 @@ We observe competitive end-to-end latency and throughput across understanding, g
 TBA: run with lightx2v
 
 
-### Run with transformers + diffusers
+### Run with transformers
 
 We recommend [**uv**](https://docs.astral.sh/uv/) to manage the Python environment.
 
@@ -89,8 +89,14 @@ cd SenseNova-U1
 ```bash
 # Pick the CUDA extra that matches your system, e.g. cu121 / cu124 / cu126 / cu128
 uv sync --extra cu124
+# Optional: install flash-attn for faster generation (SDPA fallback is used otherwise)
+# uv sync --extra cu124 --extra flash
 source .venv/bin/activate
 ```
+
+The `sensenova_u1` package is installed in editable mode, so the canonical
+NEO-Unify model implementation (`src/sensenova_u1/models/neo_unify/`) is
+automatically registered with `transformers.Auto*` at import time.
 
 #### Visual Understanding
 
@@ -100,11 +106,47 @@ TBA
 
 #### Visual Generation
 
-Text-to-Image
+##### Text-to-Image
+
+[`examples/t2i_inference.py`](./examples/t2i_inference.py) is minimal text-to-image inference script for SenseNova-U1.
+
+By default the model renders at **2048 × 2048** (1:1). You can override with `--width` / `--height`. SenseNova-U1 is trained on a set of resolution buckets (~2K total pixels) covering the following aspect ratios:
+
+| Aspect ratio | Width × Height |
+| :----------- | :------------- |
+| 1:1          | 2048 × 2048    |
+| 16:9 / 9:16  | 2720 × 1536 / 1536 × 2720 |
+| 3:2 / 2:3    | 2496 × 1664 / 1664 × 2496 |
+| 4:3 / 3:4    | 2368 × 1760 / 1760 × 2368 |
+| 2:1 / 1:2    | 2880 × 1440 / 1440 × 2880 |
+| 3:1 / 1:3    | 3456 × 1152 / 1152 × 3456 |
+
+The script accepts arbitrary `--width` / `--height` and only emits a warning when they fall outside this table; quality may degrade for untrained shapes.
 
 ```bash
-TBA
+python examples/t2i_inference.py \
+  --model_path OpenSenseNova/SenseNova-U1-Mini \
+  --prompt "一个咖啡店门口有一个黑板，上面写着日日新咖啡，2元一杯，旁边有个霓虹灯，写着商汤科技，旁边有个海报，海报上面是一只小浣熊，海报下方写着SenseNova newbee。" \
+  --width 2048 --height 2048 \
+  --output out.png \
+  --profile
 ```
+
+For batched inference, pass a JSONL file via `--jsonl` (see [`examples/prompts.jsonl`](./examples/prompts.jsonl)). Each line is `{"prompt": ...}` and optionally `{"width": W, "height": H}`:
+
+```bash
+python examples/t2i_inference.py \
+    --model_path OpenSenseNova/SenseNova-U1-Mini \
+    --jsonl prompts.jsonl \
+    --output_dir outputs/ \
+    --profile
+```
+
+##### Image Editing
+
+
+TBA
+
 
 #### Interleaved Generation
 
