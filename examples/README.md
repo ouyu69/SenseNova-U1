@@ -85,8 +85,8 @@ python examples/editing/inference.py \
 Output resolution is decoupled from the input and has two modes:
 
 - **Auto (default)**: omit `--width / --height` and the output tracks the
-  input via `smart_resize` — aspect ratio preserved, total pixels clamped
-  to `[--min_pixels, --max_pixels]`. This is the natural "edit in place" default.
+  first input via `smart_resize` — aspect ratio preserved, total pixels **normalized** to `--target_pixels` (default `2048 * 2048`),
+  and the final H / W are snapped to multiples of 32.
 - **Explicit**: pass `--width W --height H` (both multiples of 32, the
   image-token grid factor). Useful for re-aspecting / resizing during the
   edit; **2048 × 2048** is a good general-purpose choice and matches the

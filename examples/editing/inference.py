@@ -28,8 +28,8 @@ DEFAULT_SEED = 42
 # Output H / W must be divisible by this (= patch_size * merge_size).
 _IMAGE_GRID_FACTOR = DEFAULT_IMAGE_PATCH_SIZE
 
-DEFAULT_MIN_PIXELS = 512 * 512
-DEFAULT_MAX_PIXELS = 2048 * 2048
+# aspect ratio ispreserved, total pixels are normalized to this target
+DEFAULT_TARGET_PIXELS = 2048 * 2048
 
 
 def _set_seed(seed: int) -> None:
@@ -80,10 +80,10 @@ def _resolve_output_size(
     input_images: Sequence[Image.Image],
     *,
     explicit: tuple[int, int] | None,
-    min_pixels: int,
-    max_pixels: int,
+    target_pixels: int,
 ) -> tuple[int, int]:
-    """Explicit (W, H) wins; else track the first input via smart_resize."""
+    """Explicit (W, H) wins; else match the first input's aspect ratio and
+    normalize the total pixel count to ``target_pixels``."""
     if explicit is not None:
         width, height = explicit
         _check_grid_divisible(width, height)
@@ -94,8 +94,8 @@ def _resolve_output_size(
         height=h,
         width=w,
         factor=_IMAGE_GRID_FACTOR,
-        min_pixels=min_pixels,
-        max_pixels=max_pixels,
+        min_pixels=target_pixels,
+        max_pixels=target_pixels,
     )
     return resized_w, resized_h
 
@@ -205,10 +205,10 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help=(
             "Explicit output width in pixels. Must be given together with --height, "
-            f"and must be a multiple of {_IMAGE_GRID_FACTOR} (the image-token grid factor). "
+            f"and must be a multiple of {_IMAGE_GRID_FACTOR}. "
             "When both --width and --height are omitted the output resolution is "
-            "derived from the input image (aspect ratio preserved, pixels clamped to "
-            "[--min_pixels, --max_pixels])."
+            "derived from the first input image: aspect ratio preserved, total "
+            "pixels normalized to --target_pixels."
         ),
     )
     p.add_argument(
@@ -218,23 +218,15 @@ def parse_args() -> argparse.Namespace:
         help=f"Explicit output height in pixels. See --width. Must be a multiple of {_IMAGE_GRID_FACTOR}.",
     )
     p.add_argument(
-        "--min_pixels",
+        "--target_pixels",
         type=int,
-        default=DEFAULT_MIN_PIXELS,
+        default=DEFAULT_TARGET_PIXELS,
         help=(
-            f"Lower pixel budget for the input-derived output resolution "
-            f"(default: {DEFAULT_MIN_PIXELS}). Smaller inputs are upscaled at least to "
-            "this total pixel count. Ignored when --width / --height are given."
-        ),
-    )
-    p.add_argument(
-        "--max_pixels",
-        type=int,
-        default=DEFAULT_MAX_PIXELS,
-        help=(
-            f"Upper pixel budget for the input-derived output resolution "
-            f"(default: {DEFAULT_MAX_PIXELS}). Larger inputs are downscaled so that "
-            "H*W stays at or below this cap. Ignored when --width / --height are given."
+            f"Target pixel count for the auto-derived output resolution "
+            f"(default: {DEFAULT_TARGET_PIXELS} = 2048*2048). The first input "
+            "image's aspect ratio is preserved and H*W is rescaled to match "
+            f"this target, which is a multiple of {_IMAGE_GRID_FACTOR}. "
+            "Ignored when --width / --height are given."
         ),
     )
 
@@ -353,8 +345,7 @@ def main() -> None:
         w, h = _resolve_output_size(
             images,
             explicit=cli_explicit_size,
-            min_pixels=args.min_pixels,
-            max_pixels=args.max_pixels,
+            target_pixels=args.target_pixels,
         )
         _set_seed(args.seed)
         with profiler.time_generate(w, h, args.batch_size):
@@ -395,8 +386,7 @@ def main() -> None:
         w, h = _resolve_output_size(
             images,
             explicit=_explicit_size_from_sample(sample) or cli_explicit_size,
-            min_pixels=args.min_pixels,
-            max_pixels=args.max_pixels,
+            target_pixels=args.target_pixels,
         )
         _set_seed(int(sample.get("seed", args.seed)))
         with profiler.time_generate(w, h, 1):
