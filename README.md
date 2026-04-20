@@ -196,8 +196,47 @@ Refer to [`docs/prompt_enhancement.md`](./docs/prompt_enhancement.md) for more d
 
 ##### Image Editing
 
+[`examples/editing/inference.py`](./examples/editing/inference.py) demonstrates the image editing capability of SenseNova-U1.
 
-TBA
+Output resolution is derived via `smart_resize` on the first input image — aspect ratio preserved, total pixels normalized to `--target_pixels` (default `2048 * 2048`). Pass `--width W --height H` (both multiples of 32) to override.
+
+Single edit:
+
+```bash
+python examples/editing/inference.py \
+  --model_path OpenSenseNova/SenseNova-U1-Mini \
+  --prompt "Change the animal's fur color to a darker shade." \
+  --image examples/editing/data/images/1.jpg \
+  --cfg_scale 4.0 \
+  --img_cfg_scale 1.0 \
+  --cfg_norm none \
+  --timestep_shift 3.0 \
+  --num_steps 50 \
+  --output output_edited.png \
+  --profile --compare
+```
+
+For batched inference, pass a JSONL file via `--jsonl` (see
+[`examples/editing/data/samples.jsonl`](./examples/editing/data/samples.jsonl)).
+Each line is `{"prompt": ..., "image": ...}` where `image` can be a single
+path or a list of paths for multi-reference editing; `width` + `height`,
+`seed`, and `type` are optional. A per-sample `width` + `height` pair
+overrides the CLI default for that line:
+
+```bash
+python examples/editing/inference.py \
+    --model_path OpenSenseNova/SenseNova-U1-Mini \
+    --jsonl examples/editing/data/samples.jsonl \
+    --output_dir outputs/editing/ \
+    --cfg_scale 4.0 \
+    --img_cfg_scale 1.0 \
+    --cfg_norm none \
+    --timestep_shift 3.0 \
+    --num_steps 50 \    
+    --profile --compare
+```
+
+Run `python examples/editing/inference.py --help` for the full flag list.
 
 
 #### Interleaved Generation
