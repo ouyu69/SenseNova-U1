@@ -15,16 +15,10 @@
   <img src="docs/assets/teaser.png" alt="SenseNova-U1" width="720">
 </p>
 
-## 🌟 Overview
+## 🌟 Overview 🌟
 
-🚀 **SenseNova-U1**, a native unified paradigm (based on **[NEO-Unify](https://huggingface.co/blog/sensenova/neo-unify)**) toward a broader roadmap where models no longer translate between modalities, but think and act across them natively across:   
-
-- 🔸 Text-only & Vision–Language Reasoning  
-- 🔸 Agentic Decision-Making
-- 🔸 Spatial Intelligence   
-- 🔹 Any-to-Image Generation & Editing 
-- 🔹 Text-rich Infographic Generation
-- 🔹 Interleaved Vision–Language Generation
+🚀 **SenseNova-U1**, a native unified paradigm (based on **[NEO-Unify](https://huggingface.co/blog/sensenova/neo-unify)**) toward a broader roadmap where models no longer translate between modalities, but think and act across them natively. 
+Multimodal AI is no longer about connecting separate systems, but about building a unified one and trusting the necessary capabilities to emerge from within.
 
 
 #### 🏗️ Key Pillars :      
@@ -43,32 +37,34 @@
 - 🌐 World Modeling (WM)
 
 
-## 📣 News
+## 📣 Updated News 📣
 
-- `[2026.04.23]` Initial release of the weights for [SenseNova-U1-Mini-SFT]([TBD]) and [SenseNova-U1-Mini-Beta]([TBD]).  
+- `[2026.04.23]` Initial release of the weights for [SenseNova-U1-Mini-SFT](https://huggingface.co/sensenova/SenseNova-U1-Mini-Beta) and [SenseNova-U1-Mini-Beta](https://huggingface.co/sensenova/SenseNova-U1-Mini-Beta).  
 
 - `[2026.04.23]` Initial release of the [inference code](https://github.com/OpenSenseNova/SenseNova-U1/blob/main/examples/README.md) for SenseNova-U1.   
 
-## 📋 ToDo
+## 📋 ToDo List 📋
 
 - [ ] Training code of SenseNova-U1 
 
 - [ ] Final weights and technical report of SenseNova-U1
 
 
-## 🦁 Model Zoo
+## 🦁 Model Zoo 🦁
 
 | Model | Params | HF Weights |
 | :---- | :------- | :--------- |
 | SenseNova-U1-Mini-SFT | 8B MoT | [🤗 link](https://huggingface.co/sensenova/SenseNova-U1-Mini-SFT) |
-| SenseNova-U1-Flash-Beta | A3B MoT | [🤗 link](https://huggingface.co/sensenova/SenseNova-U1-Mini-Beta) |
+| SenseNova-U1-Mini-Beta | 8B MoT | [🤗 link](https://huggingface.co/sensenova/SenseNova-U1-Mini-Beta) |
+| SenseNova-U1-Flash-SFT | A3B MoT | 🤗 link |
+| SenseNova-U1-Flash-Beta | A3B MoT | 🤗 link |
 
-## 🎨 Showcases
+## 🎨 Showcases 🎨
 
-### Text-to-Image (General Case)
+#### Text-to-Image (General Case)
 
 
-### Text-to-Image (Infographics)
+#### Text-to-Image (Infographics)
 
 | | | |
 | :---: | :---: | :---: |
@@ -79,7 +75,7 @@
 > 📸 **More text-to-image samples:** see [Text-to-Image gallery](./docs/showcases.md#text-to-image).
 
 
-### Image Editing
+#### Image Editing
 
 | | | |
 | :---: | :---: | :---: |
@@ -87,7 +83,7 @@
 
 > 📸 **More editing samples:** see [Image Editing gallery](./docs/showcases.md#image-editing).
 
-### Interleaved Generation
+#### Interleaved Generation
 
 | |
 | :---: |
@@ -96,7 +92,7 @@
 
 > 📸 **More interleaved samples:** see [Interleaved Generation gallery](./docs/showcases.md#interleaved-generation).
 
-### Visual Understanding
+#### Visual Understanding
 
 | |
 | :---: |
