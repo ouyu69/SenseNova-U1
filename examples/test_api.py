@@ -47,7 +47,7 @@ GENERATION_SYSTEM_PROMPT = (
     "the user's description, not the language of the prompt. If no language is specified, use the "
     "user's input language."
 )
-'''
+"""
     _aspect_ratio_to_resolution: ClassVar[dict] = {
         "1:1": {"1K": (1024, 1024), "1.5K": (1536, 1536), "2K": (2048, 2048)},
         "16:9": {"1.5K": (2048, 1152), "2K": (2720, 1536)},
@@ -61,7 +61,7 @@ GENERATION_SYSTEM_PROMPT = (
         "1:3": {"1.5K": (864, 2592), "2K": (1152, 3456)},
         "3:1": {"1.5K": (2592, 864), "2K": (3456, 1152)},
     }
-'''
+"""
 IMAGE_CONFIG_DEFAULT = {
     "aspect_ratio": "16:9",
     "image_size": "2K",
@@ -69,7 +69,7 @@ IMAGE_CONFIG_DEFAULT = {
     "seed": 42,
     # If set to True, the generated image will have the same resolution as the input image.
     # If set to False, the resolution of the generated image will be determined by the image_size and aspect_ratio.
-    "dynamic_resolution": True, 
+    "dynamic_resolution": True,
     # if you want to determine the resolution of the generated image by yourself, set the height and width.
     # the default value is -1.
     "height": -1,
@@ -78,9 +78,7 @@ IMAGE_CONFIG_DEFAULT = {
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="OpenAI-compatible API test client for LightLLM + LightX2V."
-    )
+    parser = argparse.ArgumentParser(description="OpenAI-compatible API test client for LightLLM + LightX2V.")
     parser.add_argument(
         "--mode",
         required=True,
@@ -153,6 +151,7 @@ def build_image_config(args: argparse.Namespace) -> dict[str, Any]:
     if args.height > 0 and args.width > 0:
         image_config["dynamic_resolution"] = False
     return image_config
+
 
 def local_image_to_data_url(path: str) -> str:
     image_path = Path(path)
@@ -244,7 +243,7 @@ def run_it2i(args: argparse.Namespace, out_dir: Path, timestamp: str) -> None:
                     {"type": "image_url", "image_url": {"url": local_image_to_data_url(args.image)}},
                     {"type": "text", "text": args.prompt},
                 ],
-            }
+            },
         ],
         "modalities": ["image"],
         "stream": False,
@@ -354,6 +353,7 @@ def run_vqa(args: argparse.Namespace, out_dir: Path, timestamp: str) -> None:
     message = ((data.get("choices") or [{}])[0]).get("message") or {}
     print("\n--- assistant content ---")
     print(message.get("content", ""))
+
 
 def main() -> None:
     args = parse_args()
