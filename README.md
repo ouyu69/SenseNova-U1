@@ -63,7 +63,10 @@ Note that the **SFT models** are trained in four stages: (1) *Understanding Warm
 
 ## 🎨 Showcases
 
-#### 🖼️ *Text-to-Image (General Case)*
+> 📸 **More text-to-image samples:** see [Text-to-Image gallery](./docs/showcases.md#text-to-image).
+
+<details>
+<summary>🖼️ Text-to-Image (General)</summary>
 
 | | | |
 | :---: | :---: | :---: |
@@ -71,7 +74,10 @@ Note that the **SFT models** are trained in four stages: (1) *Understanding Warm
 | [<img width="260" alt="t2i general face hd 13" src="./docs/assets/showcases/t2i_general/1_1_face_hd_13.webp">](./docs/assets/showcases/t2i_general/1_1_face_hd_13.webp) | [<img width="260" alt="t2i general face hd 07" src="./docs/assets/showcases/t2i_general/1_1_dense_artistic_10.webp">](./docs/assets/showcases/t2i_general/1_1_dense_artistic_10.webp) | [<img width="260" alt="t2i general landscape 07" src="./docs/assets/showcases/t2i_general/1_1_landscape_07.webp">](./docs/assets/showcases/t2i_general/1_1_landscape_07.webp) |
 | [<img width="200" alt="t2i general portrait artistic 02 b" src="./docs/assets/showcases/t2i_general/9_16_human_pose_11.webp">](./docs/assets/showcases/t2i_general/9_16_human_pose_11.webp) | [<img width="200" alt="t2i general portrait text rendering 02" src="./docs/assets/showcases/t2i_general/9_16_sensenova_u1_31.webp">](./docs/assets/showcases/t2i_general/9_16_sensenova_u1_31.webp) | [<img width="200" alt="t2i general portrait artistic 07" src="./docs/assets/showcases/t2i_general/9_16_artistic_07.webp">](./docs/assets/showcases/t2i_general/9_16_artistic_07.webp) |
 
-#### 🖼️ *Text-to-Image (Infographics)*
+</details>
+
+<details>
+<summary>🖼️ Text-to-Image (Infographics)</summary>
 
 | | | |
 | :---: | :---: | :---: |
@@ -79,41 +85,55 @@ Note that the **SFT models** are trained in four stages: (1) *Understanding Warm
 | [<img width="300" alt="t2i square 0004" src="./docs/assets/showcases/t2i_infographic/0004_2048x2048.webp">](./docs/assets/showcases/t2i_infographic/0004_2048x2048.webp) | [<img width="300" alt="t2i square 0005" src="./docs/assets/showcases/t2i_infographic/0005_2048x2048.webp">](./docs/assets/showcases/t2i_infographic/0005_2048x2048.webp) | [<img width="300" alt="t2i square 0006" src="./docs/assets/showcases/t2i_infographic/0006_2048x2048.webp">](./docs/assets/showcases/t2i_infographic/0006_2048x2048.webp) |
 | [<img width="200" alt="t2i portrait 0007" src="./docs/assets/showcases/t2i_infographic/0007_1536x2720.webp">](./docs/assets/showcases/t2i_infographic/0007_1536x2720.webp) | [<img width="200" alt="t2i portrait 0008" src="./docs/assets/showcases/t2i_infographic/0008_1536x2720.webp">](./docs/assets/showcases/t2i_infographic/0008_1536x2720.webp) | [<img width="200" alt="t2i portrait 0009" src="./docs/assets/showcases/t2i_infographic/0009_1536x2720.webp">](./docs/assets/showcases/t2i_infographic/0009_1536x2720.webp) |
 
+</details>
 
-#### 🖼️ *Text-to-Image (Reasoning)*
+<details>
+<summary>🖼️ Text-to-Image (Reasoning)</summary>
+
+</details>     
 
 
+> 📸 **More editing samples:** see [Image Editing gallery](./docs/showcases.md#image-editing).  
 
 
-> 📸 **More text-to-image samples:** see [Text-to-Image gallery](./docs/showcases.md#text-to-image).
-
-
-#### ✏️ *Image Editing (General)*
+<details>
+<summary>✏️ Image Editing (General)</summary>
 
 | | | |
 | :---: | :---: | :---: |
 | [<img alt="editing sample 0001" src="./docs/assets/showcases/editing/0001_2048x2048_compare.webp">](./docs/assets/showcases/editing/0001_2048x2048_compare.webp) | [<img alt="editing sample 0002" src="./docs/assets/showcases/editing/0002_2048x2048_compare.webp">](./docs/assets/showcases/editing/0002_2048x2048_compare.webp) | [<img alt="editing sample 0003" src="./docs/assets/showcases/editing/0003_2048x2048_compare.webp">](./docs/assets/showcases/editing/0003_2048x2048_compare.webp) |
 
+</details>
 
-#### ✏️ *Image Editing (Reasoning)*
 
-> 📸 **More editing samples:** see [Image Editing gallery](./docs/showcases.md#image-editing).
+<details>
+<summary>✏️ Image Editing (Reasoning)</summary>
 
-#### ♻️ *Interleaved Generation*
+
+</details>    
+
+
+> 📸 **More interleaved samples:** see [Interleaved Generation gallery](./docs/showcases.md#interleaved-generation).
+
+<details>
+<summary>♻️ Interleaved Generation</summary>
 
 | |
 | :---: |
 | [<img alt="interleave case 02" src="./docs/assets/showcases/interleave/case_02.webp">](./docs/assets/showcases/interleave/case_02.webp) |
 | [<img alt="interleave case 03" src="./docs/assets/showcases/interleave/case_03.webp">](./docs/assets/showcases/interleave/case_03.webp) |
 
-> 📸 **More interleaved samples:** see [Interleaved Generation gallery](./docs/showcases.md#interleaved-generation).
+</details>
 
-#### 📝 *Visual Understanding*
+<details>
+<summary>📝 Visual Understanding</summary>
 
 | |
 | :---: |
 | [<img alt="vqa agentic case" src="./docs/assets/showcases/vqa/agentic_case.webp">](./docs/assets/showcases/vqa/agentic_case.webp) |
 | [<img alt="vqa general cases" src="./docs/assets/showcases/vqa/general_case.webp">](./docs/assets/showcases/vqa/general_case.webp) |
+
+</details>
 
 
 ## 📊 Key Benchmarks
