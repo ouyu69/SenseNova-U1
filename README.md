@@ -42,7 +42,7 @@ Last but not least, preliminary evidence displays that our models extend beyond 
 ## 🎨 Showcases
 
 A quick tour below; see [`docs/showcases.md`](./docs/showcases.md) for
-additional editing samples.
+additional editing and visual understanding samples.
 
 ### Text-to-Image (Infographics)
 
@@ -63,6 +63,13 @@ additional editing samples.
 ### Interleaved Generation
 
 TBA
+
+### Visual Understanding
+
+| |
+| :---: |
+| [<img width="600" alt="vqa agentic case" src="./docs/assets/showcases/vqa/agentic_case.webp">](./docs/assets/showcases/vqa/agentic_case.webp) |
+| [<img width="600" alt="vqa general cases" src="./docs/assets/showcases/vqa/general_case.webp">](./docs/assets/showcases/vqa/general_case.webp) |
 
 ## 📊 Benchmarks
 
