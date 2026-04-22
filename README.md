@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/arXiv-TBD-b31b1b.svg" alt="arXiv"></a>
-  <a href="#"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Model-yellow" alt="HuggingFace Model"></a>
+  <a href="https://huggingface.co/sensenova/SenseNova-U1-Mini-Beta"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Model-yellow" alt="HuggingFace Model"></a>
   <a href="https://unify.light-ai.top/"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20SenseNova_U1-Demo-Green" alt="SenseNova-U1 Demo"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
 </p>
@@ -45,7 +45,7 @@
 
 ## 📣 News
 
-- `[TBD]` Initial release of SenseNova-U1 (code, weights, and technical report).
+- `2026\04\23` Initial release of SenseNova-U1-Mini-Beta.
 
 ## 🦁 Model Zoo
 
@@ -53,13 +53,10 @@
 
 | Model | Params | HF Weights |
 | :---- | :------- | :--------- |
-| SenseNova-U1-Mini | 16B | [🤗 link (TBD)](#) |
-| SenseNova-U1-Flash | 38BA3B | [🤗 link (TBD)](#) |
+| SenseNova-U1-Mini-Beta | 8B + 8B | [🤗 SenseNova-U1-Mini-Beta](https://huggingface.co/sensenova/SenseNova-U1-Mini-Beta) |
 
 ## 🎨 Showcases
 
-A quick tour below; see [`docs/showcases.md`](./docs/showcases.md) for
-additional editing and visual understanding samples.
 
 ### Text-to-Image (Infographics)
 
@@ -93,7 +90,8 @@ additional editing and visual understanding samples.
 | [<img alt="vqa agentic case" src="./docs/assets/showcases/vqa/agentic_case.webp">](./docs/assets/showcases/vqa/agentic_case.webp) |
 | [<img alt="vqa general cases" src="./docs/assets/showcases/vqa/general_case.webp">](./docs/assets/showcases/vqa/general_case.webp) |
 
-## 📊 Benchmarks
+
+## 📊 Key Benchmarks
 
 > TODO: Add Benchmark Chart
 
@@ -102,27 +100,22 @@ Evaluation scripts and benchmark reproduction guides will be added in `evaluatio
 
 ## 🛠️ Quick Start
 
-### Use with SenseNova-Skills (zero-config, recommended)
+
+### Use with SenseNova-Studio
+
+The fastest way to experience SenseNova-U1 is through **[SenseNova-Studio](https://unify.light-ai.top/)** — a free online playground where you can try the model directly in your browser, no installation or GPU required.
+
+- 🌐 **Zero setup** — just open [unify.light-ai.top](https://unify.light-ai.top/) and start chatting.
+- 🎨 **Full-stack capabilities** — visual understanding (VQA), text-to-image generation, image editing, and interleaved vision–language generation, all in one interface.
+- ⚡ **Always up to date** — the platform is backed by the latest SenseNova-U1 checkpoints with optimized inference (LightLLM + LightX2V).
+- 💸 **Free to use** — ideal for quick exploration, prompt iteration, and sharing results with collaborators.
+
+
+### Use with SenseNova-Skills
 
 The easiest way to try SenseNova-U1 is through our companion repository **[SenseNova-Skills](https://github.com/OpenSenseNova/SenseNova-Skills)**, which ships SenseNova-U1 as a ready-to-use skill.
 
 Refer to the [SenseNova-Skills README](https://github.com/OpenSenseNova/SenseNova-Skills) for installation and usage details.
-
-
-### Run with LightLLM + LightX2V
-
-To efficiently serve a unified model that jointly handles understanding and generation, we co-design a dedicated inference stack on top of **[LightLLM](https://github.com/ModelTC/lightllm)** and **[LightX2V](https://github.com/ModelTC/lightx2v)**, featuring:
-
-- **Disaggregated serving & transfer design** — understanding and generation workloads are served on separate engines with a low-overhead KV / feature transfer channel.
-- **Understanding-side optimizations** — tailored kernels, scheduling, and KV management for the VLM path.
-- **Generation-side optimizations** — Kernel fusion, CFG parallelism, Ulysses parallelism, and improved memory management for KV cache.
-
-We observe competitive end-to-end latency and throughput across understanding, generation, and interleaved workloads.
-
-> 📖 **Full design, benchmarking protocol, and performance numbers:** see [`docs/inference_infrastructure.md`](./docs/inference_infrastructure.md).
-
-
-TBA: run with lightx2v
 
 
 ### Run with transformers
@@ -164,16 +157,20 @@ python examples/interleave/inference.py --model_path OpenSenseNova/SenseNova-U1-
 > See [`examples/README.md`](./examples/README.md) for batched inference, JSONL format, prompt enhancement, resolution buckets, and full flag reference.
 
 
-## 🛠️ Development
+### Run with LightLLM + LightX2V
 
-To catch lint / formatting issues locally before they fail CI, install the
-pre-commit hook once after cloning:
+To efficiently serve a unified model that jointly handles understanding and generation, we co-design a dedicated inference stack on top of **[LightLLM](https://github.com/ModelTC/lightllm)** and **[LightX2V](https://github.com/ModelTC/lightx2v)**, featuring:
 
-```bash
-uv pip install pre-commit   # or: pip install pre-commit
-pre-commit install
-pre-commit run --all-files  # optional: check the whole repo now
-```
+- **Disaggregated serving & transfer design** — understanding and generation workloads are served on separate engines with a low-overhead KV / feature transfer channel.
+- **Understanding-side optimizations** — tailored kernels, scheduling, and KV management for the VLM path.
+- **Generation-side optimizations** — Kernel fusion, CFG parallelism, Ulysses parallelism, and improved memory management for KV cache.
+
+We observe competitive end-to-end latency and throughput across understanding, generation, and interleaved workloads.
+
+> 📖 **Full design, benchmarking protocol, and performance numbers:** see [`docs/inference_infrastructure.md`](./docs/inference_infrastructure.md).
+
+
+TBA: run with lightx2v
 
 
 ## 🖊️ Citation
