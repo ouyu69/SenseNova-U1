@@ -66,11 +66,10 @@ TBA
 
 ### Visual Understanding
 
-| | |
-| :---: | :---: |
-| [<img width="400" alt="vqa general cases" src="./docs/assets/showcases/vqa/general_case.webp">](./docs/assets/showcases/vqa/general_case.webp) | [<img width="400" alt="vqa agentic case" src="./docs/assets/showcases/vqa/agentic_case.webp">](./docs/assets/showcases/vqa/agentic_case.webp) |
-
-> 📸 **More visual understanding samples:** see [Visual Understanding gallery](./docs/showcases.md#visual-understanding).
+| |
+| :---: |
+| [<img width="600" alt="vqa agentic case" src="./docs/assets/showcases/vqa/agentic_case.webp">](./docs/assets/showcases/vqa/agentic_case.webp) |
+| [<img width="600" alt="vqa general cases" src="./docs/assets/showcases/vqa/general_case.webp">](./docs/assets/showcases/vqa/general_case.webp) |
 
 ## 📊 Benchmarks
 
