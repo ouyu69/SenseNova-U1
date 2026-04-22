@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/arXiv-TBD-b31b1b.svg" alt="arXiv"></a>
+  <a href="#"><img src="https://img.shields.io/badge/arXiv-Coming-b31b1b.svg" alt="arXiv"></a>
   <a href="https://huggingface.co/sensenova/SenseNova-U1-Mini-Beta"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Model-yellow" alt="HuggingFace Model"></a>
   <a href="https://unify.light-ai.top/"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20SenseNova_U1-Demo-Green" alt="SenseNova-U1 Demo"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
@@ -45,11 +45,9 @@
 
 ## 📣 News
 
-- `2026\04\23` Initial release of SenseNova-U1-Mini-Beta.
+- `2026\04\23` Initial release of [SenseNova-U1-Mini-Beta](https://huggingface.co/sensenova/SenseNova-U1-Mini-Beta).
 
 ## 🦁 Model Zoo
-
-<!-- TODO: fill in the table once weights are released -->
 
 | Model | Params | HF Weights |
 | :---- | :------- | :--------- |
@@ -166,9 +164,6 @@ To efficiently serve a unified model that jointly handles understanding and gene
 We observe competitive end-to-end latency and throughput across understanding, generation, and interleaved workloads.
 
 > 📖 **Full design, benchmarking protocol, and performance numbers:** see [`docs/inference_infrastructure.md`](./docs/inference_infrastructure.md).
-
-
-TBA: run with lightx2v
 
 
 ## 🖊️ Citation
