@@ -23,7 +23,7 @@
 🚀 **SenseNova U1** is a new series of native multimodal models that unifies multimodal understanding, reasoning, and generation within a single architecture. 
 It marks a fundamental paradigm shift in multimodal AI: **from modality integration to true unification**. Rather than relying on adapters to translate between modalities, SenseNova U1 models think and act across language and vision natively.
 
-The unification of visual understanding and generation opens tremendous possibilities. SenseNova U1 sits in the stage of data-driven learning (like ChatGPT), yet gestures toward the next stage, that is, Agentic learning and thinking in a natively multimodal way.
+The unification of visual understanding and generation opens tremendous possibilities. SenseNova U1 sits in the stage of data-driven learning (like ChatGPT), yet gestures toward the next stage, that is, Agentic learning (like OpenClaw) and thinking in a natively multimodal way.
 
 
 #### 🏗️ *Key Pillars:*      
@@ -33,9 +33,9 @@ NEO-Unify eliminates both Visual Encoder (VE) and Variational Auto-Encoder (VAE)
 
 This architecture has several important features:
 
-- 🖼️ Preserve semantic richness while maintaining pixel-level visual fidelity.
-- 🧠 Across-modality reasoning with high efficiency and minimal conflict, with a native mixture of transformers. 
-- 🔗 Language and visual information can be modeled directly as a unified compound.  
+- 🔗 Language and visual information can be modeled end-to-end as a unified compound.   
+- 🖼️ Preserve semantic richness while  maintaining pixel-level visual fidelity.     
+- 🧠 Across-modality reasoning with high efficiency and minimal conflict, by native mixture of transformers. 
 
 
 #### ✨ *What This Unlocks:*
@@ -76,9 +76,9 @@ Although these models are relatively compact by today’s standards, they alread
 
 ## 📣 Updated News
 
-- `[2026.04.23]` Initial release of the weights for [SenseNova-U1-8B-MoT-SFT](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT-SFT) and [SenseNova-U1-8B-MoT](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT).  
+- `[2026.04.27]` Initial release of the weights for [SenseNova-U1-8B-MoT-SFT](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT-SFT) and [SenseNova-U1-8B-MoT](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT).  
 
-- `[2026.04.23]` Initial release of the [inference code](https://github.com/OpenSenseNova/SenseNova-U1/blob/main/examples/README.md) for SenseNova-U1.   
+- `[2026.04.27]` Initial release of the [inference code](https://github.com/OpenSenseNova/SenseNova-U1/blob/main/examples/README.md) for SenseNova-U1.   
 
 ## 📋 ToDo List
 
@@ -120,6 +120,16 @@ Although these models are relatively compact by today’s standards, they alread
     <td style="vertical-align: top;">A small piece of dry wood and a dense iron block are in a transparent water tank</td>
     <td><div style="max-height: 200px; overflow-y: auto;">1. <b>Instruction Understanding:</b> The core subjects are a small piece of dry wood and a dense iron block positioned within a transparent water tank. The wood is floating on the surface while the iron block is submerged at the bottom. 2. <b>Reasoning Process:</b> The wood is less dense than water so it will float, while the iron is denser and will sink to the bottom. 3. <b>Establish the frame:</b> The composition is a vertical medium shot centering the rectangular tank within the frame. The camera angle is eye-level to clearly display the water line and the submerged base. Focus is sharp across the entire depth of the tank to ensure both materials are distinct. 4. <b>Build the environment:</b> The scene is contained entirely within the clear glass walls of the water tank. The water fills the majority of the volume, providing a medium for the floating wood and sunken iron block. The background remains out of focus to keep attention on the tank's interior. 5. <b>Set the lighting and color:</b> Soft natural light illuminates the scene from the left, creating gentle reflections on the water surface. The color palette features the brown grain of the wood contrasting against the dark grey metallic finish of the iron. Shadows are soft and diffused through the liquid. 6. <b>Explicit Prompt:</b> A realistic photo of a transparent water tank showing a piece of wood floating on the surface and an iron block resting at the bottom.</div></td>
     <td style="vertical-align: top;"><img src="./docs/assets/showcases/t2i_reasoning/5_reasoning.png" style="max-width: 100%; max-height: 100%; object-fit: contain;"></td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">A typical dish from the country where Naples is located</td>
+    <td><div style="max-height: 200px; overflow-y: auto;">1. <b>Instruction Understanding:</b> The core subject is a Neapolitan pizza presented as a typical dish. The context specifies Naples, Italy, as the country of origin for this food item. 2. <b>Reasoning Process:</b> Naples is in Italy, and a classic dish is a Neapolitan pizza. 3. <b>Establish the frame:</b> The Neapolitan pizza is captured in a close-up shot that fills the central frame. The angle is slightly elevated to show the round form of the dish clearly. 4. <b>Set the lighting and color:</b> Soft lighting illuminates the surface of the Neapolitan pizza to reveal texture. Warm tones dominate the color palette, emphasizing the baked nature of the dish. 5. <b>Lock the style:</b> The image utilizes a realistic photographic style with sharp focus on the main subject. The finish appears natural and appetizing, suitable for food documentation. 6. <b>Explicit Prompt:</b> A delicious Neapolitan pizza with a soft, charred crust, tomato sauce, and fresh mozzarella, served on a rustic wooden table, realistic food photography.</div></td>
+    <td style="vertical-align: top;"><img src="./docs/assets/showcases/t2i_reasoning/2_reasoning.png" style="max-width: 100%; max-height: 100%; object-fit: contain;"></td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">A solution of calcium carbonate reacting with acetic acid</td>
+    <td><div style="max-height: 200px; overflow-y: auto;">1. <b>Instruction Understanding:</b> The core subject is a solution of calcium carbonate and acetic acid. The prompt specifies the reacting state of the chemical mixture. 2. <b>Reasoning Process:</b> The reaction produces carbon dioxide gas, which would be visible as a steady stream of bubbles rising through the liquid. 3. <b>Establish the frame:</b> The camera frames the solution closely to capture the details of the reaction. The composition centers on the liquid where the gas is visible. 4. <b>Set the lighting and color:</b> The liquid appears clear, allowing the white bubbles to stand out distinctly. The lighting is bright and even to illuminate the stream of gas. 5. <b>Lock the style:</b> The image maintains a realistic photographic style suitable for scientific observation. The focus is sharp on the reacting solution and bubbles. 6. <b>Explicit Prompt:</b> A test tube filled with a clear liquid and a rapid, effervescent stream of carbon dioxide bubbles rising to the surface, laboratory experiment.</div></td>
+    <td style="vertical-align: top;"><img src="./docs/assets/showcases/t2i_reasoning/7_reasoning.png" style="max-width: 100%; max-height: 100%; object-fit: contain;"></td>
   </tr>
 </table>
 
@@ -229,7 +239,7 @@ Although these models are relatively compact by today’s standards, they alread
 > 📸 **More editing samples:** see [Image Editing Gallery](./docs/showcases.md#image-editing). 
 
 <details>
-<summary>♻️ Interleaved Generation</summary>
+<summary>♻️ Interleaved Generation (General)</summary>
 
 | |
 | :---: |
@@ -238,15 +248,34 @@ Although these models are relatively compact by today’s standards, they alread
 
 </details>
 
+
+<details>
+<summary>♻️ Interleaved Generation (Reasoning)</summary>
+
+| |
+| :---: |
+| [<img alt="interleave case 05" src="./docs/assets/showcases/interleave/reasoning_case1.png">](./docs/assets/showcases/interleave/reasoning_case1.png) |
+
+</details>
+
 > 📸 **More interleaved samples:** see [Interleaved Generation Gallery](./docs/showcases.md#interleaved-generation).
 
 <details>
-<summary>📝 Visual Understanding</summary>
+<summary>📝 Visual Understanding (General)</summary>
+
+| |
+| :---: |
+| [<img alt="vqa general cases" src="./docs/assets/showcases/vqa/general_case.webp">](./docs/assets/showcases/vqa/general_case.webp) |
+
+</details>
+
+<details>
+<summary>📝 Visual Understanding (Agentic)</summary>
 
 | |
 | :---: |
 | [<img alt="vqa agentic case" src="./docs/assets/showcases/vqa/agentic_case.webp">](./docs/assets/showcases/vqa/agentic_case.webp) |
-| [<img alt="vqa general cases" src="./docs/assets/showcases/vqa/general_case.webp">](./docs/assets/showcases/vqa/general_case.webp) |
+
 
 </details>
 
@@ -256,9 +285,9 @@ Although these models are relatively compact by today’s standards, they alread
 <details>
 <summary>🦾 Visual-Language Action</summary>
 
-[![YouTube](https://img.shields.io/badge/Video%201-%23FF0000.svg?logo=YouTube&logoColor=white)](https://www.youtube.com/watch?v=3mvBPPgv8vo)
-[![YouTube](https://img.shields.io/badge/Video%202-%23FF0000.svg?logo=YouTube&logoColor=white)](https://www.youtube.com/watch?v=2QZY8gf0Vsk)
-[![YouTube](https://img.shields.io/badge/Video%203-%23FF0000.svg?logo=YouTube&logoColor=white)](https://www.youtube.com/watch?v=tznVbuYf0yw)
+[![YouTube](./docs/assets/showcases/vla/1.png)](https://www.youtube.com/watch?v=3mvBPPgv8vo)
+[![YouTube](./docs/assets/showcases/vla/2.png)](https://www.youtube.com/watch?v=2QZY8gf0Vsk)
+[![YouTube](./docs/assets/showcases/vla/3.png)](https://www.youtube.com/watch?v=tznVbuYf0yw)
 
 </details>
 
@@ -269,32 +298,22 @@ Although these models are relatively compact by today’s standards, they alread
 <summary>📝 Visual Understanding</summary>
 
 <p align="center">
-  <img src="docs/assets/benchmarks/understanding_radial.webp" alt="Understanding Radial">
-</p>
-
-> **Visual Understanding details:**
-
-<p align="center">
   <img src="docs/assets/benchmarks/understanding.webp" alt="Understanding Benchmarks">
 </p>
 
 </details>
 
 <details>
-<summary>🖼️ Visual Generation & ♻️ Interleaved Generation</summary>
-
-<p align="center">
-  <img src="docs/assets/benchmarks/generation_radial.webp" alt="Generation Radial" width="48%">
-  <img src="docs/assets/benchmarks/interleaved_radial.webp" alt="Interleaved Radial" width="48%">
-</p>
-
-> **Visual Generation details:**
+<summary>🖼️ Visual Generation</summary>
 
 <p align="center">
   <img src="docs/assets/benchmarks/generation.webp" alt="Generation Benchmarks">
 </p>
 
-> **Interleaved Generation details:**
+</details>
+
+<details>
+<summary>♻️ Interleaved Generation</summary>
 
 <p align="center">
   <img src="docs/assets/benchmarks/interleaved.webp" alt="Interleaved Benchmarks">
@@ -331,7 +350,7 @@ The easiest way to integrate SenseNova-U1 into your own agent or application is 
 </p>
 </details>
 
-### 🤗 Run with transformers
+### 🤗 Run with transformers (Default)
 
 > **Setup:** Follow the [Installation Guide](./docs/installation.md) to clone the repo and install dependencies with uv.
 
@@ -382,7 +401,7 @@ python examples/interleave/inference.py --model_path SenseNova/SenseNova-U1-8B-M
 > See [`examples/README.md`](./examples/README.md) for batched inference, JSONL format, prompt enhancement, resolution buckets, and full flag reference.
 
 
-### ⚡ Run with LightLLM + LightX2V
+### ⚡ Run with LightLLM + LightX2V (Recommended)
 
 For production serving, we co-design a dedicated inference stack on top of **[LightLLM](https://github.com/ModelTC/lightllm)** (understanding) and **[LightX2V](https://github.com/ModelTC/lightx2v)** (generation). The two engines are disaggregated so that each path can use its own parallelism and resource budget, with a low-overhead transfer channel in between.
 
