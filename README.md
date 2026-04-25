@@ -238,6 +238,17 @@ Note that the **SFT models** are trained in four stages: (1) *Understanding Warm
 
 > 📸 **More understanding samples:** see [Visual Understanding Gallery](./docs/showcases.md#visual-understanding). 
 
+<details>
+<summary>🦾 Visual-Language Action</summary>
+
+| |
+| :---: |
+| <video src="./docs/assets/showcases/vla/1.mp4" controls width="100%"></video> |
+| <video src="./docs/assets/showcases/vla/2.mp4" controls width="100%"></video> |
+| <video src="./docs/assets/showcases/vla/3.mp4" controls width="100%"></video> |
+
+</details>
+
 
 ## 📊 Key Benchmarks
 

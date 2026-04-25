@@ -239,6 +239,18 @@
 > 📸 **更多视觉理解样例：** 参见 [视觉理解画廊](./docs/showcases_CN.md#visual-understanding)。
 
 
+<details>
+<summary>🦾 视觉语言动作</summary>
+
+| |
+| :---: |
+| <video src="./docs/assets/showcases/vla/1.mp4" controls width="100%"></video> |
+| <video src="./docs/assets/showcases/vla/2.mp4" controls width="100%"></video> |
+| <video src="./docs/assets/showcases/vla/3.mp4" controls width="100%"></video> |
+
+</details>
+
+
 ## 📊 核心评测
 
 <details>
