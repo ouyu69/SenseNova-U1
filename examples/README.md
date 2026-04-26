@@ -153,6 +153,7 @@ Output resolution has two modes:
 
 CFG defaults: `--cfg_scale 4.0` (text guidance), `--img_cfg_scale 1.0` (image CFG off by default). Run `python examples/editing/inference.py --help` for the full flag list.
 
+See [`editing/data/samples.jsonl`](./editing/data/samples.jsonl) for a tiny starter file.
 
 ## Interleave
 
