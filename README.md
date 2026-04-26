@@ -33,9 +33,7 @@ The unification of visual understanding and generation opens tremendous possibil
 
 #### 🏗️ *Key Pillars:*      
 
-At the core of SenseNova U1 is **[NEO-Unify](https://huggingface.co/blog/sensenova/neo-unify)**, a novel architecture designed from the first principles for multimodal AI:  *It eliminates both Visual Encoder (VE) and Variational Auto-Encoder (VAE) where pixel-word information are inherently and deeply correlated.*
-
-This architecture has several important features:
+At the core of SenseNova U1 is **[NEO-Unify](https://huggingface.co/blog/sensenova/neo-unify)**, a novel architecture designed from the first principles for multimodal AI:  *It eliminates both Visual Encoder (VE) and Variational Auto-Encoder (VAE) where pixel-word information are inherently and deeply correlated.* Several important features are as follows:
 
 - 🔗 Model language and visual information end-to-end as a unified compound.   
 - 🖼️ Preserve semantic richness while maintaining pixel-level visual fidelity.     
@@ -84,9 +82,9 @@ In this release, we are open-sourcing the SenseNova U1 Lite series in two sizes:
 | SenseNova-U1-A3B-MoT-SFT | A3B MoT | 🤗 link |
 | SenseNova-U1-A3B-MoT | A3B MoT | 🤗 link |
 
-Notably, **SFT models** (*×32 downsampling ratio*) are trained in four stages: Understanding Warmup, Generation Pre-training, Unified Mid-training, and Unified SFT, with **final models** obtained after an initial round of T2I reinforcement learning (RL)..
+Notably, **SFT models** (*×32 downsampling ratio*) are trained via Understanding Warmup, Generation Pre-training, Unified Mid-training, and Unified SFT, with **final models** obtained after an initial round of T2I reinforcement learning (RL).
 
-Although relatively compact by today’s standards, these models already show strong performance across diverse tasks, comparable to commercial models with excellent cost efficiency. Larger-scale versions are planned to further enhance capability and performance.
+Although relatively compact by today’s standards, these models already show strong performance across diverse tasks, comparable to commercial models with excellent cost efficiency. Larger-scale versions are planned to further enhance capability and performance in the future.
 
 
 ## 📣 Updated News
