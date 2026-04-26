@@ -47,18 +47,17 @@ This architecture has several important features:
 
 Powered by this new core architecture, SenseNova U1 delivers exceptional efficiency in multimodal learning:
 
-<div align="center" style="margin-bottom: 18px;">
-  <div style="display: inline-block; width: 48%; vertical-align: top; margin-right: 1%;">
-    <img src="docs/assets/perform_vs_speed_avg8.png" alt="Prediction latency vs averaging performance across 8 tasks" width="100%">
-    <br>
-    <sub>Prediction Latency vs. Averaging Performance on OneIG (EN, ZH), LongText (EN, ZH), CVTG, BizGenEval (Easy, Hard), and IGenBench.</sub>
-  </div>
-  <div style="display: inline-block; width: 48%; vertical-align: top; margin-left: 1%;">
-    <img src="docs/assets/perform_vs_speed_avg3.png" alt="Prediction latency vs averaging performance on infographic benchmarks" width="100%">
-    <br>
-    <sub>Prediction Latency vs. Averaging Performance on Infographic Benchmarks, i.e., BizGenEval (Easy, Hard), and IGenBench.</sub>
-  </div>
-</div>
+<p align="center">
+  <img src="docs/assets/perform_vs_speed_avg8.png" width="48%" />
+  <img src="docs/assets/perform_vs_speed_avg3.png" width="48%" />
+</p>
+
+<p align="center">
+  <sub>
+    Left: Prediction Latency vs. Averaging Performance on OneIG (EN, ZH), LongText (EN, ZH), CVTG, BizGenEval (Easy, Hard), and IGenBench. <br>
+    Right: Prediction Latency vs. Averaging Performance on Infographic Benchmarks (BizGenEval, IGenBench).
+  </sub>
+</p>
 
 - 🏆 **Open-source SoTA in both understanding and generation**: SenseNova U1 sets a new standard for unified multimodal understanding and generation, achieving state-of-the-art performance among open-source models across a wide range of understanding, reasoning, and generation benchmarks.
   
