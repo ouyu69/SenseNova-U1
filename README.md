@@ -82,9 +82,9 @@ In this release, we are open-sourcing the SenseNova U1 Lite series in two sizes:
 | SenseNova-U1-A3B-MoT-SFT | A3B MoT | 🤗 link |
 | SenseNova-U1-A3B-MoT | A3B MoT | 🤗 link |
 
-Notably, **SFT models** (*×32 downsampling ratio*) are trained via Understanding Warmup, Generation Pre-training, Unified Mid-training, and Unified SFT, with **final models** obtained after an initial round of T2I reinforcement learning (RL).
+Here **SFT models** (*×32 downsampling ratio*) are trained via Understanding Warmup, Generation Pre-training, Unified Mid-training, and Unified SFT, with **final models** obtained after an initial round of T2I RL training.
 
-Although relatively compact by today’s standards, these models already show strong performance across diverse tasks, comparable to commercial models with excellent cost efficiency. Larger-scale versions are planned to further enhance capability and performance in the future.
+Although relatively compact by today’s standards, these models already show strong performance across diverse tasks, comparable to commercial models with excellent cost efficiency. Notably, larger-scale versions are planned to further enhance capability and performance in the future.
 
 
 ## 📣 Updated News
@@ -338,7 +338,7 @@ Although relatively compact by today’s standards, these models already show st
 
 ## ⚠️ Ongoing Improvements
 
-While showing strong performance across various tasks, several limitations remain and point to directions for further improvement:
+Despite strong performance across tasks, several limitations remain for improvement:
 
 * **Visual Understanding**:   
   The current model only supports a context length of up to **32K** tokens, which may constrain performance in scenarios requiring longer or more complex visual contexts.
