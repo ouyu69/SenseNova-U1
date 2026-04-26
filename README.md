@@ -14,14 +14,15 @@
 <p align="center">
   <img src="docs/assets/teaser.png" alt="SenseNova-U1" width="900">
 </p>
-<p align="center">
-  <img src="docs/assets/teaser_1.png" alt="radar plot" width="900">
-</p>
 
 ## 🌟 Overview
 
 🚀 **SenseNova U1** is a new series of native multimodal models that unifies multimodal understanding, reasoning, and generation within a single architecture. 
 It marks a fundamental paradigm shift in multimodal AI: **from modality integration to true unification**. Rather than relying on adapters to translate between modalities, SenseNova U1 models think and act across language and vision natively.
+
+<p align="center">
+  <img src="docs/assets/teaser_1.png" alt="radar plot" width="900">
+</p>
 
 The unification of visual understanding and generation opens tremendous possibilities. SenseNova U1 sits in the stage of data-driven learning (like ChatGPT), yet gestures toward the next stage, that is, Agentic learning (like OpenClaw) and thinking in a natively multimodal way.
 
@@ -36,7 +37,6 @@ This architecture has several important features:
 - 🔗 Model language and visual information end-to-end as a unified compound.   
 - 🖼️ Preserve semantic richness while maintaining pixel-level visual fidelity.     
 - 🧠 Reason across modalities with high efficiency & minimal conflict via native MoTs. 
-
 
 #### ✨ *What This Unlocks:*
 
