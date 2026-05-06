@@ -78,7 +78,7 @@ SenseNova U1 的核心是 **[NEO-Unify](https://huggingface.co/blog/sensenova/ne
 | :---- | :------- | :--------- |
 | SenseNova-U1-8B-MoT-SFT | 8B MoT | [🤗 链接](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT-SFT) |
 | SenseNova-U1-8B-MoT | 8B MoT | [🤗 链接](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT) |
-| SenseNova-U1-8B-MoT-8step-preview | 8B MoT | [🤗 链接](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT-8step-preview) |
+| SenseNova-U1-8B-MoT-LoRA-8step-V1.0 | 0.4B | [🤗 链接](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT-LoRAs/blob/main/SenseNova-U1-8B-MoT-LoRA-8step-V1.0.safetensors) |
 | SenseNova-U1-A3B-MoT-SFT | A3B MoT | 🤗 链接 |
 | SenseNova-U1-A3B-MoT | A3B MoT | 🤗 链接 |
 
@@ -90,6 +90,8 @@ SenseNova U1 的核心是 **[NEO-Unify](https://huggingface.co/blog/sensenova/ne
 
 
 ## 📣 最新动态
+
+- `[2026.05.06]` 发布[SenseNova-U1-8B-MoT-LoRA-8step-V1.0](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT-LoRAs/blob/main/SenseNova-U1-8B-MoT-LoRA-8step-V1.0.safetensors). 请查看[推理示例脚本](docs/base_vs_distill.md#run-base-and-distilled-model).
 
 - `[2026.04.30]` 发布8步推理模型的预览版 [SenseNova-U1-8B-MoT-8step-preview](https://huggingface.co/sensenova/SenseNova-U1-8B-MoT-8step-preview). 在大多数情况下，该模型的图像生成质量与基础模型非常接近 (查看 [效果对比和存在的问题](docs/base_vs_distill.md))。要测试该模型，可以参考[推理脚本](examples/README.md), 但需替换如下参数: ```--cfg_scale 1.0 --num_steps 8``` .
 
