@@ -362,7 +362,7 @@ SenseNova U1 的核心是 **[NEO-Unify](https://huggingface.co/blog/sensenova/ne
   对人体细粒度细节的处理仍有挑战，尤其是当人物在画面中占比较小，或与周围物体存在复杂交互时。
 
 * **文字生成**：
-  文字渲染有时会出现拼写错误、字符变形或格式不一致的问题，且对 prompt 的措辞较为敏感，在文字密集场景下尤为明显。(最佳实践请参见 [`提示词增强`](./docs/prompt_enhancement.md))
+  文字渲染有时会出现拼写错误、字符变形或格式不一致的问题，且对 prompt 的措辞较为敏感，在文字密集场景下尤为明显。(最佳实践请参见 [`提示词增强`](./docs/prompt_enhancement_CN.md))
 
 * **图文交错生成**：
 
@@ -447,6 +447,8 @@ python examples/interleave/inference.py --model_path sensenova/SenseNova-U1-8B-M
 </details>
 
 > 批量推理、JSONL 格式、prompt 增强、分辨率档位及完整参数说明请参见 [`examples/README_CN.md`](./examples/README_CN.md)。
+
+> 显存性能分析请参见 [`性能分析`](./docs/gpu_mem_profiler_CN.md)。
 
 
 ### 💾 低显存推理（GGUF + VRAM 模式）

@@ -476,7 +476,7 @@ def main() -> None:
                 system_message=args.system_message,
                 seed=args.seed,
             )
-            gen.batch = max(len(images), 1)
+        profiler.update_last_batch(len(images))
         print(f"[text] {text}")
         _save_outputs(
             text,
@@ -533,7 +533,7 @@ def main() -> None:
                     system_message=args.system_message,
                     seed=args.seed,
                 )
-                gen.batch = max(len(images), 1)
+            profiler.update_last_batch(len(images))
 
             stem = f"{i + 1:04d}" + ("_think" if think_mode else "_no_think")
             input_names = _save_outputs(
