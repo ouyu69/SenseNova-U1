@@ -466,11 +466,6 @@ class SenseNovaU1LocalLoader(io.ComfyNode):
                     default="",
                     tooltip="get path from comfyui models folder",
                 ),
-                io.String.Input(
-                    "sensenova_u1_src",
-                    default=default_source_path(),
-                    tooltip="Optional SenseNova-U1 source checkout or src directory.",
-                ),
                 io.String.Input("device", default="cuda"),
                 io.Combo.Input("dtype", options=list(DTYPE_OPTIONS), default="bfloat16"),
                 io.Combo.Input("attn_backend", options=list(ATTN_BACKEND_OPTIONS), default="auto"),
@@ -533,7 +528,6 @@ class SenseNovaU1LocalLoader(io.ComfyNode):
     def fingerprint_inputs(
         cls,
         model_path: str,
-        sensenova_u1_src: str,
         device: str,
         dtype: str,
         attn_backend: str,
@@ -544,7 +538,7 @@ class SenseNovaU1LocalLoader(io.ComfyNode):
     ) -> str:
         key = (
             model_path.strip(),
-            sensenova_u1_src.strip(),
+            default_source_path().strip(),
             device.strip(),
             dtype,
             attn_backend,
@@ -559,7 +553,6 @@ class SenseNovaU1LocalLoader(io.ComfyNode):
     def execute(
         cls,
         model_path: str,
-        sensenova_u1_src: str,
         device: str,
         dtype: str,
         attn_backend: str,
@@ -569,8 +562,9 @@ class SenseNovaU1LocalLoader(io.ComfyNode):
         gguf_checkpoint: str,
     ) -> io.NodeOutput:
         import folder_paths
-        
+
         model_path = os.path.join(folder_paths.models_dir, model_path)
+        sensenova_u1_src = default_source_path()
         resolved_gguf = _resolve_gguf_choice(gguf_checkpoint.strip())
         cache_key = (
             model_path.strip(),
