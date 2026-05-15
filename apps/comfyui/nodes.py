@@ -10,6 +10,8 @@ from typing import Any
 
 from comfy_api.latest import ComfyExtension, io
 
+import os
+
 try:
     from .api_client import (
         CHAT_MODELS,
@@ -31,6 +33,7 @@ try:
         DEFAULT_SEED,
         DEFAULT_VRAM_MODE,
         DEVICE_MAP_OPTIONS,
+        MODEL_PATH_OPTIONS,
         DTYPE_OPTIONS,
         INTERLEAVE_RESOLUTION_OPTIONS,
         INTERLEAVE_RESULT_TYPE,
@@ -67,6 +70,7 @@ except ImportError:  # pragma: no cover - supports direct imports during tests
         DEFAULT_SEED,
         DEFAULT_VRAM_MODE,
         DEVICE_MAP_OPTIONS,
+        MODEL_PATH_OPTIONS,
         DTYPE_OPTIONS,
         INTERLEAVE_RESOLUTION_OPTIONS,
         INTERLEAVE_RESULT_TYPE,
@@ -456,10 +460,11 @@ class SenseNovaU1LocalLoader(io.ComfyNode):
             display_name="SenseNova U1 Local Loader",
             category=LOCAL_CATEGORY,
             inputs=[
-                io.String.Input(
+                io.Combo.Input(
                     "model_path",
-                    default="sensenova/SenseNova-U1-8B-MoT",
-                    tooltip="HuggingFace model id or local checkpoint directory.",
+                    options=list(MODEL_PATH_OPTIONS),
+                    default="",
+                    tooltip="get path from comfyui models folder",
                 ),
                 io.String.Input(
                     "sensenova_u1_src",
@@ -563,6 +568,9 @@ class SenseNovaU1LocalLoader(io.ComfyNode):
         vram_mode: str,
         gguf_checkpoint: str,
     ) -> io.NodeOutput:
+        import folder_paths
+        
+        model_path = os.path.join(folder_paths.models_dir, model_path)
         resolved_gguf = _resolve_gguf_choice(gguf_checkpoint.strip())
         cache_key = (
             model_path.strip(),
