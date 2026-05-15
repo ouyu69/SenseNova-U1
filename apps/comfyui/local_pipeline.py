@@ -179,6 +179,10 @@ DEVICE_MAP_OPTIONS = ("none", "auto", "balanced", "balanced_low_0", "sequential"
 VRAM_MODE_OPTIONS = ("full", "low", "balanced")
 DEFAULT_VRAM_MODE = "full"
 
+MODEL_PATH_OPTIONS = (
+    "SenseNova-U1-8B-MoT",
+)
+
 # vram_mode -> prefetch_count (the underlying knob on the layer-offload wrapper)
 # 0 = no offload, 1 = synchronous, >=2 = async prefetch this many layers ahead.
 # Absolute VRAM is workload-dependent (KV cache grows with image/text count in
